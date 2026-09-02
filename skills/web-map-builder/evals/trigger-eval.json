@@ -1,0 +1,23 @@
+[
+  {"query": "building a choropleth of the 255 israeli municipalities showing population density, labels need to be in hebrew, and it has to work on mobile. standalone html i can drop on github pages, no build step. where do i start", "should_trigger": true},
+  {"query": "i've got 62,000 tree points as geojson and my leaflet map locks up the browser for about 15 seconds on load. currently doing L.geoJSON with a custom divIcon for each one. what's the right approach at this count", "should_trigger": true},
+  {"query": "popups on my map show hebrew street names mixed with english district codes and the punctuation ends up on the wrong side. the page is dir=rtl already. how do i fix the bidi inside the popup content", "should_trigger": true},
+  {"query": "overlaying about 8000 semi-transparent incident points on a basemap and everything just reads as mud. which basemap should i be using for this, and does it change if i switch to a heatmap", "should_trigger": true},
+  {"query": "our parcels layer is 340MB of geojson and obviously that's not shippable to a browser. looking at pmtiles vs hosting a tile server. we only need zoom 8-16 and it updates monthly", "should_trigger": true},
+  {"query": "need a compact legend for a diverging ramp (population change, -20% to +35%) that reads correctly in RTL and doesn't take up half the screen on a phone", "should_trigger": true},
+  {"query": "writing a MapView component in react that takes a geojson prop and a locale prop (he or en), renders the polygons and binds a popup per feature. using react-leaflet. can you write it", "should_trigger": true},
+  {"query": "labels on my bus-stop layer collide badly at zoom 13 — theyre stacked on top of each other and unreadable over the satellite imagery. whats the standard way to handle this", "should_trigger": true},
+  {"query": "i published a leaflet map as a claude artifact and its just a blank grey box. works fine when i open the same html locally. no errors i can see", "should_trigger": true},
+  {"query": "should i use markercluster or switch the renderer to canvas for ~9k points? the points need individual click handlers either way", "should_trigger": true},
+
+  {"query": "before i compute the area of each parcel, do i need to reproject out of EPSG:4326? the layer came from an open data portal in lat/lon and the areas i'm getting look like nonsense", "should_trigger": false},
+  {"query": "postgis is throwing 'TopologyException: side location conflict' when i intersect the zoning layer with the parcels. some of the input polygons are self-intersecting. whats the right repair", "should_trigger": false},
+  {"query": "my land-use classifier scores 0.89 on validation but the validation chips are from the same aerial survey and often the same neighbourhood as training. how should i be splitting this spatially", "should_trigger": false},
+  {"query": "the og:image isn't showing when i paste the project link into telegram. file is at /preview.png in the repo root and its 1200x630", "should_trigger": false},
+  {"query": "can you turn on branch protection for main and require conversation resolution before merging, this repo is about to have collaborators", "should_trigger": false},
+  {"query": "torn between zustand and redux toolkit for a mid-size react app. team knows redux already but its 6 slices of pretty simple state", "should_trigger": false},
+  {"query": "designing the REST layer for a parcels service in fastapi. what should the list endpoint return — full feature collection or paginated, and where do i put the bbox", "should_trigger": false},
+  {"query": "need a grouped bar chart of monthly revenue by region for a slide, matplotlib is fine. six regions, 24 months", "should_trigger": false},
+  {"query": "building an internal ops dashboard — four KPI tiles at the top, a time series below, and a sortable table. no geography involved. whats a sane layout", "should_trigger": false},
+  {"query": "my vite build fails in github actions with 'Cannot find module leaflet/dist/leaflet.css' but it builds fine locally. node 20 both places", "should_trigger": false}
+]

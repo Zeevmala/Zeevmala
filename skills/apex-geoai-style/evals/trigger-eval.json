@@ -1,0 +1,23 @@
+[
+  {"query": "review src/components/ParcelTable.tsx for me — its a class component, fetches in componentDidMount, and the filter logic is inline in render. tell me whats wrong and rewrite it", "should_trigger": true},
+  {"query": "starting a new service that ingests municipal open data nightly and exposes it over an api. fastapi or express? team is stronger in python but the rest of our stack is node", "should_trigger": true},
+  {"query": "give me the apex style answer: whats the cleanest way to structure a react app that has a map view, a table view and a shared filter bar", "should_trigger": true},
+  {"query": "can you do an architecture review of this ingestion pipeline — raw files land in s3, a lambda parses them into postgres, a cron rebuilds materialised views, frontend hits a node api. it's getting slow and i think the design is wrong not the queries", "should_trigger": true},
+  {"query": "designing the api for our parcels service. what should responses look like, how do i paginate a feature collection, and where do auth tokens live given the frontend is a static site", "should_trigger": true},
+  {"query": "here's my express handler for the upload endpoint — it reads the whole file into memory, no error handling, and the api key is right there in the source. rip it apart", "should_trigger": true},
+  {"query": "we're loading a 900MB csv into pandas in a worker to compute summary stats and the box keeps OOMing. want to fix this properly rather than just bumping the instance size", "should_trigger": true},
+  {"query": "answer in geoai style please — is it worth moving our tile generation from a nightly cron to an event-driven setup, or is that overengineering for 3 datasets", "should_trigger": true},
+  {"query": "scaffold me a react + fastapi app: vite frontend with tailwind, python backend with postgres, docker compose for local dev. i want the actual files not a description", "should_trigger": true},
+  {"query": "our frontend polls /api/status every 2 seconds to update a progress bar during long imports. it works but feels wrong. what should this be instead", "should_trigger": true},
+
+  {"query": "im computing distances between clinic points and household points, both loaded from a geopackage in EPSG:4326. the numbers come out around 0.03 which obviously isn't metres. what do i need to do first", "should_trigger": false},
+  {"query": "postgis st_intersects is returning rows i dont expect — turns out some of my input polygons are invalid according to st_isvalid. whats the correct way to repair them without losing rings", "should_trigger": false},
+  {"query": "for a map of unemployment rate by municipality, is equal interval or natural breaks the more defensible classification? the distribution is heavily right skewed", "should_trigger": false},
+  {"query": "which basemap works best under a dense layer of red incident points — im currently on standard osm and it's far too busy", "should_trigger": false},
+  {"query": "need og tags and a preview image sorted before i share the project link, plus a favicon. its a static site going on github pages", "should_trigger": false},
+  {"query": "walk me through enabling github pages for this repo with a build step — its a vite app so i cant just serve from the branch root", "should_trigger": false},
+  {"query": "whats a quadkey and how does it relate to the z/x/y tile scheme? just trying to understand the indexing", "should_trigger": false},
+  {"query": "can you write the release notes for v2.1 based on the commits since the v2.0 tag, grouped by feature and fix", "should_trigger": false},
+  {"query": "explain the practical difference between a COG and a Zarr store for a time series of monthly rasters — im choosing between them for an archive", "should_trigger": false},
+  {"query": "my pytest suite passes locally but two tests fail intermittently in CI, always the ones that hit the test database. how do i track this down", "should_trigger": false}
+]
