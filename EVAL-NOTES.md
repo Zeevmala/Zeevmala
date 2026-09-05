@@ -7,20 +7,30 @@ Run 2026-09-02. Method and raw numbers below; query sets are versioned at `skill
 | Skill | desc | old recall | new recall | old reject | new reject |
 |---|---|---|---|---|---|
 | `web-map-builder` | 707 → 386 ch (−45%) | 8/10 | **10/10** | 10/10 | 10/10 |
-| `github-portfolio-deploy` | 687 → 333 ch (−52%) | 9/10 | **10/10** | 10/10 | 9/10 |
+| `github-portfolio-deploy` | 687 → 347 ch (−49%) | 9/10 | **10/10** | 10/10 | **10/10** |
 | `apex-geoai-style` | 494 → 389 ch (−21%) | 7/10 | 7/10 | 10/10 | 10/10 |
 | `geospatial-analysis` | new, 424 ch | — | 9/10 | — | 10/10 |
 
-Two skills gained recall, one held. Total always-loaded description cost fell 19% (1,888 → 1,532 ch)
-while adding a fourth skill. The compression is vindicated.
+Two skills gained recall, one held, none lost. `github-portfolio-deploy` and `web-map-builder` now
+score 20/20 — strictly better than their originals at roughly half the length. Total always-loaded
+description cost fell ~18% while adding a fourth skill. The compression is vindicated.
 
 ## Three specific things worth fixing
 
-1. **`github-portfolio-deploy` now false-fires on generic CI.** The negative
-   *"set up a github actions workflow that runs pytest and ruff on every PR"* went 0/3 → **2/3**.
-   Cause is almost certainly the phrase **"Covers CI workflow"** added to the new description — it
-   reads as "any GitHub Actions work" rather than "Pages deployment". Narrowing it to
-   "Pages deploy workflow" should recover the negative without costing the +1 recall.
+1. **`github-portfolio-deploy` false-fired on generic CI — FIXED.** The negative
+   *"set up a github actions workflow that runs pytest and ruff on every PR"* went 0/3 → 2/3 when
+   the description was compressed. Cause was the phrase **"Covers CI workflow"**, which reads as
+   "any GitHub Actions work" rather than "Pages deployment". Narrowed to
+   **"Covers the Pages deploy workflow"** (347 ch) and re-ran the arm:
+
+   | Description | false positive | the Pages-404 recall query | totals |
+   |---|---|---|---|
+   | old, 687 ch | 0/3 correctly quiet | 0/3 **miss** | 9/10 recall, 10/10 reject |
+   | new, 333 ch | **2/3 false positive** | 3/3 pass | 10/10 recall, 9/10 reject |
+   | fixed, 347 ch | 0/3 correctly quiet | 3/3 pass | **10/10 recall, 10/10 reject** |
+
+   Exactly one query changed between the compressed and fixed descriptions — the intended one. No
+   collateral movement. Final result is 20/20, strictly better than the original at half the length.
 
 2. **`geospatial-analysis` misses nearest-neighbour.** *"scipy cKDTree to find the nearest clinic …
    coords are lat/lon"* scored 1/3 — the one positive it misses. The description lists predicates,
