@@ -1,6 +1,6 @@
 ---
 name: "github-portfolio-deploy"
-description: "Pre-publish QA and GitHub Pages deployment for portfolio web projects. Triggers: GitHub Pages, deploy, publish, go live, portfolio site, branch protection, OG tags, social preview, pre-launch checklist, making a repo public, or the user's GitHub (zeevmala). Covers CI workflow, SEO/OG, a11y, performance budget, deploy anti-patterns."
+description: "Pre-publish QA and GitHub Pages deployment for portfolio web projects. Triggers: GitHub Pages, deploy, publish, go live, portfolio site, branch protection, OG tags, social preview, pre-launch checklist, making a repo public, or the user's GitHub (zeevmala). Covers the Pages deploy workflow, SEO/OG, a11y, performance budget, deploy anti-patterns."
 ---
 
 # GitHub Portfolio Deploy
