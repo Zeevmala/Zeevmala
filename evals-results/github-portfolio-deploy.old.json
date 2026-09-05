@@ -1,0 +1,171 @@
+{
+  "skill_name": "github-portfolio-deploy",
+  "description": "Pre-publish QA and GitHub Pages deployment for portfolio web projects. Use this skill whenever the user wants to deploy a project to GitHub Pages, prepare a repo for public release, set up branch protection, configure Open Graph tags, check mobile responsiveness, or do a pre-publish review of any web project destined for their GitHub portfolio. Triggers on mentions of GitHub Pages, deploy, publish, go live, portfolio site, branch protection, OG tags, social preview, pre-launch checklist, or making a project public. Also use when the user references their GitHub (zeevmala) or asks to prepare any web project for production release, even if they don't say \"GitHub Pages\" explicitly.",
+  "results": [
+    {
+      "query": "the bus-stop map project is finished and i want it live on github pages tonight. single index.html plus a data folder. walk me through it and tell me what i should check first",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "going public with this repo tomorrow \u2014 can you do a full pre-publish pass? console errors, dead links, leftover placeholder text, whatever else i'd normally miss",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "pasted my project link into a whatsapp group and it showed no preview card at all, just the bare url. the og tags are in the head as far as i can tell",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "this repo is about to get two collaborators. set up branch protection on main \u2014 reviews required, status checks required, and i dont want anyone bypassing it including me",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "i'm making an old private repo public. what do i need to scrub or check before i flip that switch \u2014 there was a .env in there early on",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "before this goes in my portfolio i want it to actually pass an accessibility check and work properly on a phone. contrast, keyboard nav, touch targets, the sidebar behaviour at 375px",
+      "should_trigger": true,
+      "trigger_rate": 0.6666666666666666,
+      "triggers": 2,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "deployed to pages and the map loads but all the geojson requests 404. locally it works. im fetching /data/stops.geojson",
+      "should_trigger": true,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": false
+    },
+    {
+      "query": "my project needs a build step now (vite) so serving from the branch root doesn't work anymore. i need an actions workflow that builds and publishes to pages",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "need a decent social preview image for the repo \u2014 what size, where does it go, and how do i point the meta tags at it once its on pages",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "can you review this repo the way a hiring manager would look at it before i put the link on my cv? readme, demo link, screenshot, the lot",
+      "should_trigger": true,
+      "trigger_rate": 0.6666666666666666,
+      "triggers": 2,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "im rendering about 80,000 points and the map is unusable. at what count should i stop using geojson directly and move to vector tiles",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "hebrew text in my leaflet popups renders right to left but the numbers inside the same line jump to the wrong position. how do i control the bidi there",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "joining 2M gps points to 5k polygons in geopandas is crawling. both layers are in the same projected crs and i've already tried chunking it",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "my segmentation model looks great on validation and terrible on a new area. i think the random chip split is leaking. how should i split spatially instead",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "look at api/routers/parcels.py and tell me if the structure is sane \u2014 response models, error handling, whether the pagination approach holds up at scale",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "i need to get this fastapi backend deployed somewhere cheap with a postgres attached. railway or fly.io, and what does the dockerfile need to look like",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "set up a github actions workflow that runs pytest and ruff on every pull request against main, python 3.12, with pip caching",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "my python package is ready to publish to pypi. whats the current recommended flow \u2014 pyproject.toml, build, twine? and how do i test it first",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "deploying a next.js app to vercel for the first time. it has server actions and an api route hitting supabase. what do i need to configure",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "zustand or redux toolkit for a react app with about six slices of shared state? one of them updates very frequently",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "passed": 19,
+    "failed": 1
+  }
+}

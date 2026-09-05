@@ -1,0 +1,171 @@
+{
+  "skill_name": "apex-geoai-style",
+  "description": "Delivery contract for a senior GIS/GeoAI engineer \u2014 code-first, zero filler, expert-to-expert, complete runnable code \u2014 plus React/Node/FastAPI conventions. Use when writing or reviewing code, choosing a stack, or doing architecture review; also on \\\"Apex style\\\"/\\\"GeoAI style\\\". Format only: spatial \u2192 geospatial-analysis, cartography \u2192 web-map-builder, deploy \u2192 github-portfolio-deploy.",
+  "results": [
+    {
+      "query": "review src/components/ParcelTable.tsx for me \u2014 its a class component, fetches in componentDidMount, and the filter logic is inline in render. tell me whats wrong and rewrite it",
+      "should_trigger": true,
+      "trigger_rate": 0.3333333333333333,
+      "triggers": 1,
+      "runs": 3,
+      "pass": false
+    },
+    {
+      "query": "starting a new service that ingests municipal open data nightly and exposes it over an api. fastapi or express? team is stronger in python but the rest of our stack is node",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "give me the apex style answer: whats the cleanest way to structure a react app that has a map view, a table view and a shared filter bar",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "can you do an architecture review of this ingestion pipeline \u2014 raw files land in s3, a lambda parses them into postgres, a cron rebuilds materialised views, frontend hits a node api. it's getting slow and i think the design is wrong not the queries",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "designing the api for our parcels service. what should responses look like, how do i paginate a feature collection, and where do auth tokens live given the frontend is a static site",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "here's my express handler for the upload endpoint \u2014 it reads the whole file into memory, no error handling, and the api key is right there in the source. rip it apart",
+      "should_trigger": true,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": false
+    },
+    {
+      "query": "we're loading a 900MB csv into pandas in a worker to compute summary stats and the box keeps OOMing. want to fix this properly rather than just bumping the instance size",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "answer in geoai style please \u2014 is it worth moving our tile generation from a nightly cron to an event-driven setup, or is that overengineering for 3 datasets",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "scaffold me a react + fastapi app: vite frontend with tailwind, python backend with postgres, docker compose for local dev. i want the actual files not a description",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "our frontend polls /api/status every 2 seconds to update a progress bar during long imports. it works but feels wrong. what should this be instead",
+      "should_trigger": true,
+      "trigger_rate": 0.3333333333333333,
+      "triggers": 1,
+      "runs": 3,
+      "pass": false
+    },
+    {
+      "query": "im computing distances between clinic points and household points, both loaded from a geopackage in EPSG:4326. the numbers come out around 0.03 which obviously isn't metres. what do i need to do first",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "postgis st_intersects is returning rows i dont expect \u2014 turns out some of my input polygons are invalid according to st_isvalid. whats the correct way to repair them without losing rings",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "for a map of unemployment rate by municipality, is equal interval or natural breaks the more defensible classification? the distribution is heavily right skewed",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "which basemap works best under a dense layer of red incident points \u2014 im currently on standard osm and it's far too busy",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "need og tags and a preview image sorted before i share the project link, plus a favicon. its a static site going on github pages",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "walk me through enabling github pages for this repo with a build step \u2014 its a vite app so i cant just serve from the branch root",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "whats a quadkey and how does it relate to the z/x/y tile scheme? just trying to understand the indexing",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "can you write the release notes for v2.1 based on the commits since the v2.0 tag, grouped by feature and fix",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "explain the practical difference between a COG and a Zarr store for a time series of monthly rasters \u2014 im choosing between them for an archive",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "my pytest suite passes locally but two tests fail intermittently in CI, always the ones that hit the test database. how do i track this down",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "passed": 17,
+    "failed": 3
+  }
+}
