@@ -1,0 +1,171 @@
+{
+  "skill_name": "geospatial-analysis",
+  "description": "Spatial technique owner: CRS/EPSG/SRID, reprojection, ITM/WGS84/UTM, geometry validity (ST_MakeValid, shapely), predicates, spatial joins, buffers, nearest-neighbour/kNN, indexing (R-tree/GiST/k-d tree), PostGIS, GeoPandas, DuckDB Spatial, rasters, zonal stats, resampling, COG/STAC/GeoParquet/FlatGeobuf/Zarr, GeoAI pipelines (spatial CV, leakage, tiling/chipping, segmentation, detection). Rendering \u2192 web-map-builder; delivery format \u2192 apex-geoai-style.",
+  "results": [
+    {
+      "query": "i've got a geodataframe of ~40k parcel polygons loaded from parcels.gpkg in EPSG:4326 and i need to compute the area of each one in dunams, then flag any parcel whose geometry is invalid before i do a spatial join against the zoning layer. what's the right order of operations here and which CRS should i be in?",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "my building-footprint segmentation model gets 0.91 IoU on validation but falls apart on a new city. i split the chips randomly with train_test_split. is that the problem, and how should i be splitting instead?",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "spatial join in geopandas is taking 40+ minutes joining 2.1M GPS pings against ~5,000 statistical-area polygons. both are in ITM. what am i doing wrong",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "im using scipy cKDTree to find the nearest clinic for each of 300k household points, coords are lat/lon straight out of the csv. results look fine in the middle of the country but wrong up north. any idea why",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "need mean NDVI per municipality from a 10m sentinel composite covering all of israel. ~260 polygons, raster is about 18GB. currently looping over polygons with rasterio mask and it's going to take all night",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "we have 12M address points that get re-queried constantly by an analytics dashboard. currently a 4GB shapefile on a network share (yes i know). what format should we move to and why \u2014 considering duckdb and pandas both need to read it",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "quick sanity check: i did gdf.buffer(500) on a WGS84 layer expecting a 500m buffer and the output polygons are enormous, they cover half the country. what happened",
+      "should_trigger": true,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": false
+    },
+    {
+      "query": "resampling a 30m land cover classification down to 100m for a regional summary. gdal.Warp with bilinear gave me class values like 3.7 which obviously aren't real classes. what resampling should i actually use here",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "converting survey points between ITM (2039) and WGS84 with pyproj and everything lands consistently ~150m off. the offset is systematic, not random. transformer is built once and reused",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "im chipping 0.5m orthophotos into 512x512 tiles to train a solar-panel detector. should the tiles overlap, and how do i stop the same rooftop appearing in both train and val?",
+      "should_trigger": true,
+      "trigger_rate": 1.0,
+      "triggers": 3,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "the legend on my leaflet choropleth keeps covering the data in the south of the map on mobile. whats a good way to position it so it doesn't occlude anything at 375px width",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "im mapping median household income by statistical area and cant decide between quantile and natural breaks for the classification. which gives a more honest looking map",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "about to make the repo public \u2014 need og:image and og:description set up so the link preview renders properly when i share it in a whatsapp group",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "can you set up branch protection on main for this repo, require one approving review and passing status checks before merge",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "starting a new dashboard frontend. should i reach for zustand or just use react context here? there's maybe 6 pieces of shared state and one of them updates on every mouse move",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "review the endpoint layout in api/routers/parcels.py \u2014 im not sure the response models are structured right and there's no pagination on the list endpoint yet",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "i have two csvs, customers.csv and orders.csv, both have a customer_id column. need to join them and get total order value per customer, output as a new csv",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "this postgres query takes 8 seconds: SELECT * FROM events WHERE tenant_id = $1 AND created_at > $2 ORDER BY created_at DESC LIMIT 50. there's an index on tenant_id. how do i speed it up",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "want to segment our ~50k customers into groups based on purchase frequency, average basket size and recency. thinking kmeans but not sure how to pick k",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    },
+    {
+      "query": "my gradient boosting model is clearly overfitting \u2014 train R2 0.94, test 0.61. should i be using k-fold cross validation instead of a single holdout split, and does that even help with overfitting?",
+      "should_trigger": false,
+      "trigger_rate": 0.0,
+      "triggers": 0,
+      "runs": 3,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "total": 20,
+    "passed": 19,
+    "failed": 1
+  }
+}

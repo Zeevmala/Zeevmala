@@ -1,6 +1,6 @@
 ---
 name: "geospatial-analysis"
-description: "Spatial technique owner: CRS/EPSG/SRID, reprojection, ITM/WGS84/UTM, geometry validity (ST_MakeValid, shapely), predicates, spatial joins, buffers, nearest-neighbour/kNN, indexing (R-tree/GiST/k-d tree), PostGIS, GeoPandas, DuckDB Spatial, rasters, zonal stats, resampling, COG/STAC/GeoParquet/FlatGeobuf/Zarr, GeoAI pipelines (spatial CV, leakage, tiling/chipping, segmentation, detection). Rendering → web-map-builder; delivery format → apex-geoai-style."
+description: "Spatial technique owner: CRS/EPSG/SRID, reprojection, ITM/WGS84/UTM, geometry validity (ST_MakeValid, shapely), predicates, spatial joins, buffers, indexing (R-tree/GiST), PostGIS, GeoPandas, DuckDB Spatial, rasters, zonal stats, resampling, COG/STAC/GeoParquet/FlatGeobuf/Zarr, GeoAI pipelines (spatial CV, leakage, tiling/chipping, segmentation, detection). Rendering → web-map-builder; delivery format → apex-geoai-style."
 ---
 
 # Geospatial Analysis

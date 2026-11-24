@@ -9,7 +9,9 @@ Run 2026-09-02. Method and raw numbers below; query sets are versioned at `skill
 | `web-map-builder` | 707 → 386 ch (−45%) | 8/10 | **10/10** | 10/10 | 10/10 |
 | `github-portfolio-deploy` | 687 → 347 ch (−49%) | 9/10 | **10/10** | 10/10 | **10/10** |
 | `apex-geoai-style` | 494 → 389 ch (−21%) | 7/10 | 7/10 | 10/10 | 10/10 |
-| `geospatial-analysis` | new, 424 ch | — | 9/10 | — | 10/10 |
+| `geospatial-analysis` | new, 424 ch | — | 9/10 → **10/10** ¹ | — | 10/10 |
+
+¹ 9/10 on claude CLI 2.1.258; 10/10 when re-measured on 2.1.331 with no description change.
 
 Two skills gained recall, one held, none lost. `github-portfolio-deploy` and `web-map-builder` now
 score 20/20 — strictly better than their originals at roughly half the length. Total always-loaded
@@ -32,9 +34,25 @@ description cost fell ~18% while adding a fourth skill. The compression is vindi
    Exactly one query changed between the compressed and fixed descriptions — the intended one. No
    collateral movement. Final result is 20/20, strictly better than the original at half the length.
 
-2. **`geospatial-analysis` misses nearest-neighbour.** *"scipy cKDTree to find the nearest clinic …
-   coords are lat/lon"* scored 1/3 — the one positive it misses. The description lists predicates,
-   joins, buffers and indexing but never nearest-neighbour / kNN. Adding that term should close it.
+2. **`geospatial-analysis` nearest-neighbour miss — NOT A REAL FINDING; fix attempted and reverted.**
+   On claude CLI 2.1.258 the cKDTree nearest-clinic query scored 1/3, so a kNN/k-d-tree term was
+   added to the description (424 → 456 ch). Re-measured on CLI **2.1.331**, running the pre-edit and
+   post-edit descriptions side by side so the delta could not be confused with the CLI change:
+
+   | Description | cKDTree query | buffer(500)-in-WGS84 query | totals |
+   |---|---|---|---|
+   | pre-edit, 424 ch | 2/3 pass | 2/3 pass | **10/10 recall, 10/10 reject = 20/20** |
+   | with kNN terms, 456 ch | 3/3 pass | **0/3 broke** | 9/10 recall, 10/10 reject = 19/20 |
+
+   Two conclusions, both worth keeping:
+   - **The original finding had evaporated.** The pre-edit description already scores 20/20 on the
+     newer CLI, cKDTree included. The miss was a property of the old CLI, not of the description.
+     A baseline measured on one CLI build does not transfer to another — re-measure both arms.
+   - **The edit traded one marginal query for another.** cKDTree and buffer-in-WGS84 both sat at 2/3,
+     right at the 0.5 threshold. Strengthening kNN terms pushed one up and knocked the other below.
+     Single-query description tweaks in that regime move noise around rather than adding signal.
+
+   Reverted. `geospatial-analysis` stays at 424 ch and scores **20/20**.
 
 3. **`apex-geoai-style` is the weak one, and it was already weak.** 7/10 in *both* arms — not a
    compression regression. It persistently misses code-review requests that don't name a stack:
